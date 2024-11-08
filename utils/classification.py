@@ -29,7 +29,7 @@ def train_and_display_confusion_matrix(model, X_train, X_test, y_train, y_test, 
     # generate classification report and confusion matrix
     class_report = classification_report(y_test, y_pred)
     conf_matrix = confusion_matrix(y_test, y_pred)
-    disp = ConfusionMatrixDisplay(conf_matrix)
+    disp = ConfusionMatrixDisplay(conf_matrix, display_labels=model.classes_)
     disp.plot(cmap='Oranges')
     plt.title(f'{model_name} Confusion Matrix')
     plt.grid(False)
